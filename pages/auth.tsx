@@ -1,7 +1,9 @@
 import Input from "@/components/Input";
-import React from "react";
+import React, { useState } from "react";
 
 const Auth = () => {
+  const [email, setEmail] = useState("");
+
   return (
     <div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
       <div className="bg-black w-full h-full lg:bg-opacity-50">
@@ -13,7 +15,13 @@ const Auth = () => {
             <h2 className="text-white text-4xl mb-8 font-semibold">Sign In</h2>
 
             <div className="flex flex-col gap-4">
-              <Input />
+              <Input
+                label="Email"
+                onChange={() => {}}
+                id="email"
+                type="email"
+                value=""
+              />
             </div>
           </div>
         </div>
