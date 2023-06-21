@@ -3,6 +3,8 @@ import React, { useState } from "react";
 
 const Auth = () => {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
@@ -16,11 +18,24 @@ const Auth = () => {
 
             <div className="flex flex-col gap-4">
               <Input
+                label="Password"
+                onChange={(ev) => setPassword(ev.target.value)}
+                id="password"
+                type="password"
+                value={email}
+              />
+              <Input
+                label="Username"
+                onChange={(ev) => setName(ev.target.value)}
+                id="name"
+                value={email}
+              />
+              <Input
                 label="Email"
-                onChange={() => {}}
+                onChange={(ev) => setEmail(ev.target.value)}
                 id="email"
                 type="email"
-                value=""
+                value={email}
               />
             </div>
           </div>
