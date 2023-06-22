@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { NextPageContext } from "next";
-import { getSession, signOut } from "next-auth/react";
-import useCurrentUser from "@component/hooks/useCurrentUser";
+import { getSession } from "next-auth/react";
+import Navbar from "@component/components/Navbar";
 
 // This function is executed on the server-side to get the initial props for the page
 export async function getServerSideProps(context: NextPageContext) {
@@ -30,16 +30,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 // The default export for the Home component
 export default function Home() { 
-  const { data: user } = useCurrentUser();
   return (
     <main>
-      {/* Display a heading with the "text-green-500" CSS class */}
-      <h1 className="text-green-500"> Netflix Clone</h1>
-      <p className="text-white">Logged in as : {user?.name}</p>
-      {/* Render a sign out button that triggers the signOut function from next-auth */}
-      <button className="h-10 w-full bg-white" onClick={() => signOut()}>
-        Sign Out
-      </button>
+      <Navbar />
     </main>
   );
 }
