@@ -1,5 +1,5 @@
 import useSwr from "swr";
-import fetcher from "@/lib/fetcher";
+import fetcher from "@component/lib/fetcher";
 
 // Define a custom hook named useCurrentUser
 const useCurrentUser = () => {
