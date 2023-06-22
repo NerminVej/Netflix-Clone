@@ -11,13 +11,12 @@ const Navbar = () => {
 
   const toggleMobileMenu = useCallback(() => {
     setShowMobileMenu((current) => !current);
-    console.log(showMobileMenu)
-
+    console.log(showMobileMenu);
   }, []);
 
   const toggleAccountMenu = useCallback(() => {
     setShowAccountMenu((current) => !current);
-    console.log(showAccountMenu)
+    console.log(showAccountMenu);
   }, []);
 
   return (
@@ -55,12 +54,13 @@ const Navbar = () => {
             <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
               <img src="/images/default-blue.png" alt="" />
             </div>
-            <BsChevronDown className="text-white transition" />
+            <BsChevronDown
+              className={`w-4 text-white fill-white transition ${
+                showAccountMenu ? "rotate-180" : "rotate-0"
+              }`}
+            />
             <AccountMenu visible={showAccountMenu} />
           </div>
-
-
-          
         </div>
       </div>
     </nav>
