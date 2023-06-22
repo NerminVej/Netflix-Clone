@@ -7,10 +7,19 @@ import AccountMenu from "./AccountMenu";
 
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [showAccountMenu, setShowAccountMenu] = useState(false);
 
   const toggleMobileMenu = useCallback(() => {
     setShowMobileMenu((current) => !current);
+    console.log(showMobileMenu)
+
   }, []);
+
+  const toggleAccountMenu = useCallback(() => {
+    setShowAccountMenu((current) => !current);
+    console.log(showAccountMenu)
+  }, []);
+
   return (
     <nav className="w-full fixed z-40 ">
       <div className="px-4 md:px-16 py-6 flex flex-row items-center transition duration-500 bg-zinc-900 bg-opacity-90">
@@ -38,13 +47,20 @@ const Navbar = () => {
           <div className="text-gray-200 hover:text-gray-300 curosr-pointer transition">
             <BsBell />
           </div>
-          <div className="flex flex-row items-center gap-2 cursor-pointer relative">
+
+          <div
+            onClick={toggleAccountMenu}
+            className="flex flex-row items-center gap-2 cursor-pointer relative"
+          >
             <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
               <img src="/images/default-blue.png" alt="" />
             </div>
             <BsChevronDown className="text-white transition" />
-            <AccountMenu visible/>
+            <AccountMenu visible={showAccountMenu} />
           </div>
+
+
+          
         </div>
       </div>
     </nav>
