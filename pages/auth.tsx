@@ -12,16 +12,20 @@ const Auth = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
+  // State to keep track of the current variant ("login" or "register")
   const [variant, setVariant] = useState("login");
 
+  // Function to toggle between login and register variants
   const toggleVariant = useCallback(() => {
     setVariant((currentVariant) =>
       currentVariant === "login" ? "register" : "login"
     );
   }, []);
 
+  // Function to handle the login process
   const login = useCallback(async () => {
     try {
+      // Sign in using next-auth "credentials" provider
       await signIn("credentials", {
         email,
         password,
@@ -29,20 +33,24 @@ const Auth = () => {
         callbackUrl: "/",
       });
 
+      // Redirect to the home page after successful login
       router.push("/");
     } catch (error) {
       console.log(error);
     }
   }, [email, password, router]);
 
+  // Function to handle the registration process
   const register = useCallback(async () => {
     try {
+      // Send a POST request to the "/api/register" endpoint with user information
       await axios.post("/api/register", {
         email,
         name,
         password,
       });
 
+      // Log in the user after successful registration
       login();
     } catch (error) {
       console.log(error);
@@ -61,6 +69,7 @@ const Auth = () => {
               {variant === "login" ? "Sign in" : "Register"}
             </h2>
             <div className="flex flex-col gap-4">
+              {/* Render the Input component for the username if the variant is "register" */}
               {variant === "register" && (
                 <Input
                   label="Username"
@@ -69,6 +78,7 @@ const Auth = () => {
                   value={name}
                 />
               )}
+              {/* Render the Input component for the email */}
               <Input
                 label="Email"
                 onChange={(ev: any) => setEmail(ev.target.value)}
@@ -76,6 +86,7 @@ const Auth = () => {
                 type="email"
                 value={email}
               />
+              {/* Render the Input component for the password */}
               <Input
                 label="Password"
                 onChange={(ev: any) => setPassword(ev.target.value)}
@@ -84,6 +95,7 @@ const Auth = () => {
                 value={password}
               />
             </div>
+            {/* Render the login or register button based on the variant */}
             <button
               onClick={variant === "login" ? login : register}
               className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition"
@@ -91,6 +103,7 @@ const Auth = () => {
               {variant === "login" ? "Login" : "Sign up"}
             </button>
             <div className="flex flex-row items-center gap-4 mt-8 justify-center">
+              {/* Render the Google sign-in button */}
               <div
                 className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition"
                 onClick={() => signIn("google", { callbackUrl: "/" })}
@@ -99,6 +112,7 @@ const Auth = () => {
               </div>
             </div>
             <p className="text-neutral-500 mt-12">
+              {/* Render the text and link to switch between login and register */}
               {variant === "login"
                 ? "First time using Netflix?"
                 : "Already have an account?"}
