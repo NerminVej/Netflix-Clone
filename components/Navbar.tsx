@@ -43,7 +43,7 @@ const Navbar = () => {
               <img src="/images/default-blue.png" alt="" />
             </div>
             <BsChevronDown className="text-white transition" />
-            <AccountMenu />
+            <AccountMenu visible/>
           </div>
         </div>
       </div>
