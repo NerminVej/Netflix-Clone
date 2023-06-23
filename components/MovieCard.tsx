@@ -1,16 +1,16 @@
-import React from 'react'
+import React from "react";
+
+import { BsFillPlayFill } from "react-icons/bs";
 
 interface MovieCardProps {
-    data: Record<string, any>;
+  data: Record<string, any>;
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({
-    data
-}) => {
+const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
   return (
-    <div className='group bg-zinc-900 col-span relative h-[12vw]'>
-        <img 
-        className='
+    <div className="group bg-zinc-900 col-span relative h-[12vw]">
+      <img
+        className="
         cursor-pointer
         object-cover
         transition
@@ -22,10 +22,12 @@ const MovieCard: React.FC<MovieCardProps> = ({
         delay-300
         w-full
         h-[12vw]
-        '
-        
-        src={data.thumbnailUrl} alt="Thumbnail"></img>
-        <div className='
+        "
+        src={data.thumbnailUrl}
+        alt="Thumbnail"
+      ></img>
+      <div
+        className="
         opacity-0
         absolute
         top-0
@@ -41,9 +43,10 @@ const MovieCard: React.FC<MovieCardProps> = ({
         group-hover:-translate-y-[6vw]
         group-hover:translate-x-[2vw]
         group-hover:opacity-100
-        '>
-            <img 
-            className='
+        "
+      >
+        <img
+          className="
             cursor-pointer
             object-cover
             transition
@@ -52,10 +55,12 @@ const MovieCard: React.FC<MovieCardProps> = ({
             rounded-t-md
             w-full
             h-[12vw]
-            '
-            
-            src={data.thumbnailUrl} alt="Thumbnail"></img>
-            <div className='
+            "
+          src={data.thumbnailUrl}
+          alt="Thumbnail"
+        ></img>
+        <div
+          className="
             z-10
             bg-zinc-800
             p-2
@@ -65,12 +70,33 @@ const MovieCard: React.FC<MovieCardProps> = ({
             transition
             shadow-md
             rounded-b-md
-            '>
-
+            "
+        >
+          <div className="flex flex-row items-center gap-3">
+            <div
+              className="
+                    cursor-pointer
+                    w-6
+                    h-6
+                    lg:w-10
+                    lg:h-10
+                    bg-white
+                    rounded-full
+                    flex
+                    justify-center
+                    items-center
+                    transition
+                    hover:bg-neutral-300
+                    "
+              onClick={() => {}}
+            >
+              <BsFillPlayFill />
             </div>
+          </div>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default MovieCard
+export default MovieCard;
