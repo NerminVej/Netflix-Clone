@@ -12,7 +12,7 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({
     movieId
 }) => {
   return (
-    <div >
+    <div className=''>
 
     </div>
   )
