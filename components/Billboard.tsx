@@ -6,8 +6,8 @@ import PlayButton from "./PlayButton";
 import useInfoModalStore from "@component/hooks/useInfoModelStore";
 
 const Billboard = () => {
-  const { data } = useBillboard();
   const { openModal } = useInfoModalStore();
+  const { data } = useBillboard();
 
   const handleOpenModal = useCallback(() => {
     openModal(data?.id);
@@ -50,6 +50,7 @@ const Billboard = () => {
         <div className="flex f lex-row items-center mt-3 md:mt-4 gap-3">
           <PlayButton movieId={data?.id} />
           <button
+            onClick={handleOpenModal}
             className="
             bg-white
             text-white
