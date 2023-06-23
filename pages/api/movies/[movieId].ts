@@ -8,19 +8,19 @@ export default async function handler(
 ) {
   try {
     if (req.method !== "GET") {
-      return res.status(405).end();
+      return res.status(405).end(); // Return a 405 status code if the HTTP method is not GET
     }
 
-    await serverAuth(req, res);
+    await serverAuth(req, res); // Authenticate the request using the serverAuth function
 
     const { movieId } = req.query;
 
     if (typeof movieId !== "string") {
-      throw new Error("Invalid Id");
+      throw new Error("Invalid Id"); // Throw an error if the movieId is not a string
     }
 
     if (!movieId) {
-      throw new Error("Missing Id");
+      throw new Error("Missing Id"); // Throw an error if the movieId is missing
     }
 
     const movies = await prismadb.movie.findUnique({
@@ -29,9 +29,9 @@ export default async function handler(
       },
     });
 
-    return res.status(200).json(movies);
+    return res.status(200).json(movies); // Return the movie data as JSON with a 200 status code
   } catch (error) {
-    console.log(error);
-    return res.status(500).end();
+    console.log(error); // Log any errors that occur during the execution
+    return res.status(500).end(); // Return a 500 status code for internal server errors
   }
 }

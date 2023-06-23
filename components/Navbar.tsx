@@ -14,10 +14,11 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Check the scroll position to determine whether to show the background
       if (window.scrollY >= TOP_OFFSET) {
-        setShowBackground(true);
+        setShowBackground(true); // If scrolled beyond the top offset, show the background
       } else {
-        setShowBackground(false);
+        setShowBackground(false); // Otherwise, hide the background
       }
     };
     window.addEventListener("scroll", handleScroll);
@@ -27,13 +28,13 @@ const Navbar = () => {
   }, []);
 
   const toggleMobileMenu = useCallback(() => {
-    setShowMobileMenu((current) => !current);
-    console.log(showMobileMenu);
+    setShowMobileMenu((current) => !current); // Toggle the state of showMobileMenu
+    console.log(showMobileMenu); // Log the current value of showMobileMenu
   }, []);
 
   const toggleAccountMenu = useCallback(() => {
-    setShowAccountMenu((current) => !current);
-    console.log(showAccountMenu);
+    setShowAccountMenu((current) => !current); // Toggle the state of showAccountMenu
+    console.log(showAccountMenu); // Log the current value of showAccountMenu
   }, []);
 
   return (
@@ -45,6 +46,7 @@ const Navbar = () => {
       >
         <img className="h-4 lg:h-7" src="/images/logo.png"></img>
         <div className="flex-row ml-8 gap-7 hidden lg:flex">
+          {/* Render each NavbarItem component with a label */}
           <NavbarItem label="Home" />
           <NavbarItem label="Series" />
           <NavbarItem label="Films" />
@@ -65,10 +67,10 @@ const Navbar = () => {
           <MobileMenu visible={showMobileMenu} />
         </div>
         <div className="flex flex-row ml-auto gap-7 items-center">
-          <div className="text-gray-200 hover:text-gray-300 curosr-pointer transition">
+          <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
             <BsSearch />
           </div>
-          <div className="text-gray-200 hover:text-gray-300 curosr-pointer transition">
+          <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
             <BsBell />
           </div>
 

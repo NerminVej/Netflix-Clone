@@ -26,6 +26,11 @@
 
 ![](Attachments/ProfileSelection.png)
 
+## Mobile Responsive
+
+![](Attachments/MobileView.png)
+
+![](Attachments/MobileBrowseToggle.png)
 
 ## Netflix Clone
 
@@ -50,13 +55,9 @@ This is a Netflix clone application built with TypeScript and Next.js. It provid
 
 1. Clone the repository:
 
-bash
-
-`git clone https://github.com/your-username/netflix-clone.git`
+`git clone https://github.com/NerminVej/netflix-clone.git`
 
 2. Install dependencies:
-
-bash
 
 `cd netflix-clone npm install`
 
@@ -64,8 +65,6 @@ bash
     
 4. Start the development server:
     
-
-bash
 
 `npm run dev`
 

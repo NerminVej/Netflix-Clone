@@ -3,9 +3,9 @@ import GoogleProvider from "next-auth/providers/google";
 import Credentials from "next-auth/providers/credentials";
 import { compare } from "bcrypt";
 import prismadb from "@component/lib/prismadb";
-
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
+// Define the authentication options as an AuthOptions object
 export const authOptions: AuthOptions = {
   providers: [
     GoogleProvider({
@@ -71,4 +71,5 @@ export const authOptions: AuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
 };
 
+// Export the NextAuth function with the authentication options as the default export
 export default NextAuth(authOptions);

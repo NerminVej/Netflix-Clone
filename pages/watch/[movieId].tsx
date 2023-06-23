@@ -6,9 +6,9 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 
 const Watch = () => {
   const router = useRouter();
-  const { movieId } = router.query;
+  const { movieId } = router.query; // Retrieve the "movieId" from the router query parameters
 
-  const { data } = useMovie(movieId as string);
+  const { data } = useMovie(movieId as string); // Fetch the movie data using the "useMovie" hook and the movieId
 
   return (
     <div className="h-screen w-screen bg-black">

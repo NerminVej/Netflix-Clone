@@ -1,14 +1,15 @@
 import React from "react";
-
 import { NextPageContext } from "next";
 import { getSession } from "next-auth/react";
 import useCurrentUser from "@component/hooks/useCurrentUser";
 import { useRouter } from "next/router";
 
 export async function getServerSideProps(context: NextPageContext) {
+  // Retrieve the user's session using the getSession function
   const session = await getSession(context);
 
   if (!session) {
+    // If there is no session, redirect to the authentication page
     return {
       redirect: {
         destination: "/auth",
@@ -39,6 +40,7 @@ const Profiles = () => {
                 <img src="/images/default-blue.png" alt="Profile"></img>
               </div>
               <div className="mt-4 text-gray-400 text-2xl text-center group-hover:text-white">
+                {/* Display the user's name */}
                 {user?.name}
               </div>
             </div>

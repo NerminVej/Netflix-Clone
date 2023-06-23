@@ -11,10 +11,14 @@ interface MovieCardProps {
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
+  // Access the Next.js router for programmatic navigation
   const router = useRouter();
+  // Custom hook to access the openModal function
   const { openModal } = useInfoModalStore();
+
   return (
     <div className="group bg-zinc-900 col-span relative h-[12vw]">
+      {/* Movie thumbnail */}
       <img
         className="
         cursor-pointer
@@ -51,6 +55,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
         group-hover:opacity-100
         "
       >
+        {/* Expanded info panel */}
         <img
           className="
             cursor-pointer
@@ -79,6 +84,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
             "
         >
           <div className="flex flex-row items-center gap-3">
+            {/* Play button */}
             <div
               className="
                     cursor-pointer
@@ -94,13 +100,17 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
                     transition
                     hover:bg-neutral-300
                     "
-              onClick={() => router.push(`/watch/${data?.id}`)}
+              onClick={() => router.push(`/watch/${data?.id}`)} // Navigate to the movie watch page
             >
               <BsFillPlayFill size={30} />
             </div>
+
+            {/* Favorite button */}
             <FavoriteButton movieId={data?.id} />
+
+            {/* Dropdown button */}
             <div
-            onClick={() => openModal(data?.id)}
+              onClick={() => openModal(data?.id)} // Open modal for additional information
               className="cursor-pointer
             ml-auto
             group/item
@@ -117,11 +127,14 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
             transition
             hover:border-neutral-300"
             >
-              <BiChevronDown 
-              size={30}
-              className="text-white group-hover/item:text-neutral-300"/>
+              <BiChevronDown
+                size={30}
+                className="text-white group-hover/item:text-neutral-300"
+              />
             </div>
           </div>
+
+          {/* Additional information */}
           <p className="text-green-400 font-semibold mt-4">
             New <span className="text-white">2023</span>
           </p>
