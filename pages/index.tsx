@@ -7,6 +7,7 @@ import Billboard from "@component/components/Billboard";
 import MovieList from "@component/components/MovieList";
 import useMovieList from "@component/hooks/useMovieList";
 import useFavorites from "@component/hooks/useFavorites";
+import InfoModal from "@component/components/InfoModal";
 
 // This function is executed on the server-side to get the initial props for the page
 export async function getServerSideProps(context: NextPageContext) {
@@ -34,17 +35,17 @@ const inter = Inter({ subsets: ["latin"] });
 
 // The default export for the Home component
 export default function Home() {
-
   const { data: movies = [] } = useMovieList();
   const { data: favorites = [] } = useFavorites();
 
   return (
     <main>
+      <InfoModal visible onClose={() => {}} />
       <Navbar />
       <Billboard />
       <div className="pb-40">
-        <MovieList title="Trending Now" data={movies}/>
-        <MovieList title="My List" data={favorites}/>
+        <MovieList title="Trending Now" data={movies} />
+        <MovieList title="My List" data={favorites} />
       </div>
     </main>
   );
