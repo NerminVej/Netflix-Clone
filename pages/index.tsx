@@ -8,6 +8,7 @@ import MovieList from "@component/components/MovieList";
 import useMovieList from "@component/hooks/useMovieList";
 import useFavorites from "@component/hooks/useFavorites";
 import InfoModal from "@component/components/InfoModal";
+import useInfoModalStore from "@component/hooks/useInfoModelStore";
 
 // This function is executed on the server-side to get the initial props for the page
 export async function getServerSideProps(context: NextPageContext) {
@@ -37,10 +38,11 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const { data: movies = [] } = useMovieList();
   const { data: favorites = [] } = useFavorites();
+  const { isOpen, closeModal } = useInfoModalStore();
 
   return (
     <main>
-      <InfoModal visible onClose={() => {}} />
+      <InfoModal visible={isOpen} onClose={closeModal} />
       <Navbar />
       <Billboard />
       <div className="pb-40">
