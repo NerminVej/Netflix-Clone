@@ -1,21 +1,18 @@
-import React, { useCallback, useMemo } from 'react'
-import { AiOutlinePlus } from 'react-icons/ai';
-import axios from 'axios';
+import React, { useCallback, useMemo } from "react";
+import { AiOutlinePlus } from "react-icons/ai";
+import axios from "axios";
 
 import useCurrentUser from "@component/hooks/useCurrentUser";
 import useFavorites from "@component/hooks/useFavorites";
 
-
-
 interface FavoriteButtonProps {
-    movieId: string;
+  movieId: string;
 }
 
-const FavoriteButton: React.FC<FavoriteButtonProps> = ({
-    movieId
-}) => {
+const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
   return (
-    <div className='
+    <div
+      className="
     cursor-pointer
     group/item
     w-6
@@ -30,10 +27,11 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({
     items-center
     transition
     hover:border-neutral-300
-    '>
-<AiOutlinePlus className='text-white' size={25}/>
+    "
+    >
+      <AiOutlinePlus className="text-white" size={25} />
     </div>
-  )
-}
+  );
+};
 
-export default FavoriteButton
+export default FavoriteButton;
