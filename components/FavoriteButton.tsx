@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from "react";
-import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineCheck } from "react-icons/ai";
 import axios from "axios";
 
 import useCurrentUser from "@component/hooks/useCurrentUser";
@@ -37,8 +37,11 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
     mutateFavorites();
   }, [movieId, isFavorite, currentUser, mutate, mutateFavorites]);
 
+  const Icon = isFavorite ? AiOutlineCheck : AiOutlinePlus;
+
   return (
     <div
+      onClick={toggleFavorites}
       className="
     cursor-pointer
     group/item
@@ -56,7 +59,7 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
     hover:border-neutral-300
     "
     >
-      <AiOutlinePlus className="text-white" size={25} />
+      <Icon className="text-white" size={25} />
     </div>
   );
 };
