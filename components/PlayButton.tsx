@@ -9,7 +9,7 @@ interface PlayButtonProps {
 const PlayButton: React.FC<PlayButtonProps> = ({ movieId }) => {
   const router = useRouter();
   return (
-    <div
+    <button
       className="
     bg-white
     rounded-md
@@ -25,8 +25,9 @@ const PlayButton: React.FC<PlayButtonProps> = ({ movieId }) => {
     transition
     "
     >
+      <BsFillPlayFill size={25} className="mr-1" />
       Play
-    </div>
+    </button>
   );
 };
 
