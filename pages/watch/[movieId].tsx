@@ -8,4 +8,12 @@ const Watch = () => {
   const { movieId } = router.query;
 
   const { data } = useMovie(movieId as string);
+
+  return(
+    <div>
+
+    </div>
+  )
 };
+
+export default Watch;
