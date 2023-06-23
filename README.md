@@ -26,6 +26,12 @@
 
 This is a Netflix clone application built with TypeScript and Next.js. It provides a development environment for building a streaming platform with features like MongoDB and Prisma for database management, NextAuth for authentication with Google, and TailwindCSS for responsive and visually appealing UI design. It incorporates cookie-based authentication for secure user sessions and utilizes React SWR for efficient data fetching and caching. State management is handled using Zustand, ensuring seamless data flow and organization.
 
+
+### Technologies Used
+
+![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge) ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge) ![Next.js](https://img.shields.io/badge/-Next.js-000000?logo=nextdotjs&logoColor=white&style=for-the-badge) ![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?logo=mongodb&logoColor=white&style=for-the-badge) ![Prisma](https://img.shields.io/badge/-Prisma-1B222D?logo=prisma&logoColor=white&style=for-the-badge) ![NextAuth](https://img.shields.io/badge/-NextAuth-000000?logo=nextdotjs&logoColor=white&style=for-the-badge) ![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?logo=tailwind-css&logoColor=white&style=for-the-badge) ![React SWR](https://img.shields.io/badge/-React%20SWR-FF4154?logo=react&logoColor=white&style=for-the-badge) ![Zustand](https://img.shields.io/badge/-Zustand-FFD43B?logo=react&logoColor=white&style=for-the-badge)
+
+
 ### Features
 
 - Netflix-like streaming platform
@@ -64,4 +70,4 @@ bash
 5. Open your browser and navigate to `http://localhost:3000` to see the application.
 
 
-<img src="https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge">
+
