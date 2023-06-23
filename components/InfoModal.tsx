@@ -85,7 +85,7 @@ const InfoModal: React.FC<InfooModalProps> = ({ visible, onClose }) => {
               src={data?.videoUrl}
             ></video>
             <div
-            className="
+              className="
             cursor-pointer
             absolute
             top-3
@@ -94,10 +94,29 @@ const InfoModal: React.FC<InfooModalProps> = ({ visible, onClose }) => {
             w-10
             rounded-full
             bg-black
-            
+            bg-opacity-70
+            flex
+            items-center
+            justify-center
             "
-            onClick={() => {}}>
-
+              onClick={() => {}}
+            >
+              <AiOutlineClose className="text-white" size={20} />
+            </div>
+            <div
+              className="
+            absolute
+            bottom-[10%]
+            left-10
+            "
+            >
+              <p className="text-white text-3xl md:text-4xl h-full lg:text-5xl font-bold mb-80">
+                {data?.title}
+              </p>
+              <div className="flex flex-row gap-4 items-center">
+                <PlayButton movieId={data?.id} />
+                <FavoriteButton movieId={data?.id} />
+              </div>
             </div>
           </div>
         </div>
