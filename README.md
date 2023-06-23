@@ -1,3 +1,27 @@
+
+## Introduction
+
+![](Attachments/MainPage.png)
+
+![](Attachments/MovieCard.png)
+
+## Movie Player
+
+![](Attachments/MoviePlayer.png)
+
+## Favorites Section
+
+![](Attachments/FavoritesSection.png)
+
+## Login Page (Including Google Authentication)
+
+![](Attachments/LogInPage.png)
+
+## Profile Selection
+
+![](Attachments/ProfileSelection.png)
+
+
 Setting up the development environment with Typescript, and NextJS.
 Establishing connections to MongoDB and Prisma for database management.
 Implementing authentication functionality using NextAuth, with support for Google and Github login.
