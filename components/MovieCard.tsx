@@ -55,6 +55,19 @@ const MovieCard: React.FC<MovieCardProps> = ({
             '
             
             src={data.thumbnailUrl} alt="Thumbnail"></img>
+            <div className='
+            z-10
+            bg-zinc-800
+            p-2
+            lg:p-4
+            absolute
+            w-full
+            transition
+            shadow-md
+            rounded-b-md
+            '>
+
+            </div>
         </div>
     </div>
   )
