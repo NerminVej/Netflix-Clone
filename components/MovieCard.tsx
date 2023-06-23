@@ -100,6 +100,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
             </div>
             <FavoriteButton movieId={data?.id} />
             <div
+            onClick={() => openModal(data?.id)}
               className="cursor-pointer
             ml-auto
             group/item
@@ -116,7 +117,9 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
             transition
             hover:border-neutral-300"
             >
-              <BiChevronDown />
+              <BiChevronDown 
+              size={30}
+              className="text-white group-hover/item:text-neutral-300"/>
             </div>
           </div>
           <p className="text-green-400 font-semibold mt-4">
