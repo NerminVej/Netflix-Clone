@@ -13,7 +13,7 @@ export default async function handler(
 
   try {
     // Authenticate the server-side request using the serverAuth function
-    const { currentUser } = await serverAuth(req);
+    const { currentUser } = await serverAuth(req, res);
     return res.status(200).json(currentUser);
     // If authentication is successful, you can proceed with your logic here
   } catch (error) {
