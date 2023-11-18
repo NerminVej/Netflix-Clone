@@ -43,7 +43,7 @@ This is a Netflix clone application built with TypeScript and Next.js. It provid
 
 - Netflix-like streaming platform
 - MongoDB and Prisma for efficient database management
-- NextAuth for authentication with Google and Github login support
+- NextAuth for authentication with Google login support
 - Fully responsive design for optimal user experience across devices
 - Cookie-based authentication for secure user sessions
 - APIs and controllers for data communication and manipulation
